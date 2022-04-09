@@ -1,7 +1,7 @@
 #!/bib/bash
 
 #############################################################
-# For cgywin or mobaxterm, adapt VARS for you
+# For cygwin or MobaXterm, adapt VARS for you
 # need OC CLI and jq installed
 # https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html
 

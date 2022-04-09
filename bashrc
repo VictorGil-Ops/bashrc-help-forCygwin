@@ -1,14 +1,11 @@
 #!/bib/bash
 
 #############################################################
-
 # For cgywin or mobaxterm, adapt VARS for you
-
 # need OC CLI and jq installed
 # https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html
 
 # VARS
-
 U="user"
 PROFILE="/drives/C/Users/$U/"
 HELP="$PROFILE/"
@@ -23,8 +20,8 @@ DEVCLUSTER='https://api.ocp.....'
 PRECLUSTER='https://api.ocp.....'
 PRO1CLUSTER='https://api.ocp.....'
 PRO2CLUSTER='https://api.ocp.....'
-
 ############################################################
+
 # Needed for command "oc edit"
 #export EDITOR=notepad++
 export PATH="$PATH:C:\\Program Files (x86)\\Notepad++"

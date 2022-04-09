@@ -1,4 +1,4 @@
 # bashrc
-.bashrc for linux terminal over cgywin and use OC CLI for OPENSHIFT
+.bashrc for linux terminal over cygwin and use OC CLI for OPENSHIFT
 
 

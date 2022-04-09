@@ -13,7 +13,7 @@ HELP="$PROFILE/"
 P="base64passwd"
 P=$(echo $P | base64 -d )
 
-OCHELPONLINE=' '
+OCHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/OCP_cheatsheet/main/README.md'
 LINUXHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/Linux_commads-cheatsheet/main/README.md'
 
 DEVCLUSTER='https://api.ocp.....'
@@ -66,23 +66,22 @@ alias ll='ls -la'
 alias oc='oc.exe'
 
 
-# Functios fopr show help on terminal
+# Functios for show help on terminal
 
+# example: ' oc-help deployment ' 
 function oc-help() { 
  if [ -z $1 ]; then	
-  #cat "$HELP/oc-help.md";
-  curl -Lk $OCHELPONLINE
+  curl -Lks $OCHELPONLINE
  else 
-  #cat "$HELP/oc-help.md"|grep -i -B 5 -A 10 $1 --color;
-  curl -Lk $OCHELPONLINE |grep -i -B 5 -A 10 $1 --color;
+  curl -Lks $OCHELPONLINE |grep -i -B 5 -A 10 $1 --color;
  fi
 }
 
 function bash-help() {
  if [ -z $1 ]; then
-  curl -Lk $LINUXHELPONLINE
+  curl -Lks $LINUXHELPONLINE
  else
-  curl -Lk $BASHHELPONLINE |grep -i -B 5 -A 10 $1 --color;
+  curl -Lks $BASHHELPONLINE |grep -i -B 5 -A 10 $1 --color;
  fi
 }
 

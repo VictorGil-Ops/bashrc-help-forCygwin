@@ -15,6 +15,7 @@ P=$(echo $P | base64 -d )
 
 OCHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/OCP_cheatsheet/main/README.md'
 LINUXHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/Linux_commads-cheatsheet/main/README.md'
+GITHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/Git_cheatsheet/main/README.md'
 
 DEVCLUSTER='https://api.ocp.....'
 PRECLUSTER='https://api.ocp.....'
@@ -43,7 +44,7 @@ function menu() {
 	printf "${GREEN}## Commads for help ##${NC} \n\n";
 	echo "- Help OCP > oc-help "; 
 	echo "- Help git > git-help ";
-	echo "- Help bash > linux-help ";
+	echo "- Help linux > linux-help ";
 	printf "\n";
 	printf "${YELLOW}## OCP get info namespace ##${NC} \n\n";
 	echo "- get-real ";
@@ -77,11 +78,19 @@ function oc-help() {
  fi
 }
 
-function bash-help() {
+function linux-help() {
  if [ -z $1 ]; then
   curl -Lks $LINUXHELPONLINE
  else
-  curl -Lks $BASHHELPONLINE |grep -i -B 5 -A 10 $1 --color;
+  curl -Lks $LINUXHELPONLINE |grep -i -B 5 -A 10 $1 --color;
+ fi
+}
+
+function git-help() {
+ if [ -z $1 ]; then
+  curl -Lks $GITHELPONLINE
+ else
+  curl -Lks $GITHELPONLINE |grep -i -B 5 -A 10 $1 --color;
  fi
 }
 

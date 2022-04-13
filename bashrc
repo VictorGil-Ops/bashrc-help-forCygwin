@@ -110,6 +110,23 @@ alias get-dns='oc get routes | grep -io ^dns.*'
 # show cluster ips
 alias get-ipnodes="oc get nodes -o wide"
 
+# connect to project
+function oc-project(){
+	
+	# use arg
+	
+        local NAMESPACE=$(oc projects |grep -i $1 |grep -iv "test" |awk '{print $1}')
+
+        if [[ ${NAMESPACE} =~ $1 ]];
+        then
+                oc project ${NAMESPACE}
+        else
+                echo " Failed, please try 'oc project <namespace>' "
+                echo " Not found $1 "
+        fi
+}
+
+
 # show pods CPU and MEMORY limits 
 function get-limits() {
 

@@ -67,6 +67,11 @@ alias bck-profile='cp -a ~/.bashrc "$PROFILE/backup_profile/.bashrc" && source ~
 alias ll='ls -la'
 alias oc='oc.exe'
 
+#OC cluster LOGIN
+alias dev="export KUBECONFIG=~/.kube/ocpdev && oc login -u=$U -p=$P $DEVCLUSTER"
+alias pre="export KUBECONFIG=~/.kube/ocppre1 && oc login -u=$U -p=$P $PRECLUSTER"
+alias pro1="export KUBECONFIG=~/.kube/ocppro1 && oc login -u=$U -p=$P $PRO1CLUSTER"
+alias pro2="export KUBECONFIG=~/.kube2/ocppro2 && oc login -u=$U -p=$P $PRO2CLUSTER"
 
 # Functios for show help on terminal
 

@@ -17,7 +17,7 @@ OCHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/OCP_cheatsheet/mai
 LINUXHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/Linux_commads-cheatsheet/main/README.md'
 GITHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/Git_cheatsheet/main/README.md'
 
-# for connect at your clusters, dev, pre, pro 
+# for connect at your clusters, use: dev, pre, pro .. 
 DEVCLUSTER='https://api.ocp.....'
 PRECLUSTER='https://api.ocp.....'
 PRO1CLUSTER='https://api.ocp.....'
@@ -205,9 +205,3 @@ function get-pods-status() {
 function oc-rsh(){
 	winpty oc rsh $1
 }
-
-#OC cluster LOGIN
-alias dev="export KUBECONFIG=~/.kube/ocpdev && oc login -u=$U -p=$P $DEVCLUSTER"
-alias pre="export KUBECONFIG=~/.kube/ocppre1 && oc login -u=$U -p=$P $PRECLUSTER"
-alias pro1="export KUBECONFIG=~/.kube/ocppro1 && oc login -u=$U -p=$P $PRO1CLUSTER"
-alias pro2="export KUBECONFIG=~/.kube2/ocppro2 && oc login -u=$U -p=$P $PRO2CLUSTER"

@@ -17,6 +17,7 @@ OCHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/OCP_cheatsheet/mai
 LINUXHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/Linux_commads-cheatsheet/main/README.md'
 GITHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/Git_cheatsheet/main/README.md'
 
+# for connect at your clusters, dev, pre, pro 
 DEVCLUSTER='https://api.ocp.....'
 PRECLUSTER='https://api.ocp.....'
 PRO1CLUSTER='https://api.ocp.....'

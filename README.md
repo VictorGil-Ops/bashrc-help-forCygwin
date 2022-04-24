@@ -1,8 +1,9 @@
 # bashrc
+
 .bashrc for linux terminal over cygwin and use OC CLI for OPENSHIFT
 
 ## OCP functions and alias
- 
+
     # show real deployment
     get-real
 
@@ -41,7 +42,6 @@
     # Linux and bash
     linux-help
 
-
-# MENU
+## MENU
 
 ![](https://github.com/VictorGil-sys/bashrc-Cygwin/blob/main/images/menu.png)

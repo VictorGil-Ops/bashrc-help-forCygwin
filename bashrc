@@ -107,7 +107,7 @@ function git-help() {
 # service b-g* is real
 # service g-b* is no real
 
-# show real real (production) blue or green
+# show real (production) blue or green
 alias get-real="oc get service -o wide | grep ^b-g"
 
 # show routes, names start with string " dns* "

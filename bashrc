@@ -13,10 +13,6 @@ HELP="$PROFILE/"
 P="base64passwd"
 P=$(echo $P | base64 -d )
 
-OCHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/OCP_cheatsheet/main/README.md'
-LINUXHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/Linux_commads-cheatsheet/main/README.md'
-GITHELPONLINE='https://raw.githubusercontent.com/VictorGil-sys/Git_cheatsheet/main/README.md'
-
 # for connect at your clusters, use: dev, pre, pro .. 
 DEVCLUSTER='https://api.ocp.....'
 PRECLUSTER='https://api.ocp.....'
@@ -43,6 +39,7 @@ function menu() {
 	
 	printf "\n"
 	printf "${GREEN}## Commads for help ##${NC} \n\n";
+	echo "- Help k8s > kc-help ";
 	echo "- Help OCP > oc-help "; 
 	echo "- Help git > git-help ";
 	echo "- Help linux > linux-help ";
@@ -76,29 +73,33 @@ alias pro2="export KUBECONFIG=~/.kube2/ocppro2 && oc login -u=$U -p=$P $PRO2CLUS
 # Functios for show help on terminal
 
 # example: ' oc-help deployment ' 
-function oc-help() { 
- if [ -z $1 ]; then	
-  curl -Lks $OCHELPONLINE
- else 
-  curl -Lks $OCHELPONLINE |grep -i -B 5 -A 10 $1 --color;
- fi
+# K8S CLI
+_KC_ONLINE='https://raw.githubusercontent.com/VictorGil-Ops/Kubernetes_cheatsheet/main/README.md'
+# OC CLI
+_OC_ONLINE='https://raw.githubusercontent.com/VictorGil-Ops/OCP_cheatsheet/main/README.md'
+# Linux
+_LIN_ONLINE='https://raw.githubusercontent.com/VictorGil-Ops/Linux_commands-cheatsheet/main/README.md'
+# Git
+_GIT_ONLINE='https://raw.githubusercontent.com/VictorGil-Ops/Git_cheatsheet/main/README.md'
+
+_H_Online=""
+
+func_curl () {
+
+  if [ -z $1 ]; then  
+          curl -Lks $_H_Online
+  else
+          curl -Lks $_H_Online |grep -i -B 15  -A 15 $1 --color;
+  fi
 }
 
-function linux-help() {
- if [ -z $1 ]; then
-  curl -Lks $LINUXHELPONLINE
- else
-  curl -Lks $LINUXHELPONLINE |grep -i -B 5 -A 10 $1 --color;
- fi
-}
+kc-help () { _H_Online=${_KC_ONLINE}; func_curl $1; };
 
-function git-help() {
- if [ -z $1 ]; then
-  curl -Lks $GITHELPONLINE
- else
-  curl -Lks $GITHELPONLINE |grep -i -B 5 -A 10 $1 --color;
- fi
-}
+oc-help () { _H_Online=${_OC_ONLINE}; func_curl $1; };
+
+linux-help () { _H_Online=${_LIN_ONLINE}; func_curl $1; };
+
+git-help () { _H_Online=${_GIT_ONLINE}; func_curl $1; };
 
 
 # Funtions for OCP Cluser and blue-green deployment: 
